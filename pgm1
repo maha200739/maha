@@ -1,0 +1,6 @@
+import pandas as pd; from functools import reduce
+data = pd.DataFrame([[9,4,8,9],[8,10,7,6],[7,6,8,5]], columns=['Maths','English','Science','History'])
+print(data.agg(['sum','min','max']), (lambda x:x+10)(5), data, 
+      list(map(lambda x:x*x, data['Maths'])), 
+      list(filter(lambda x:x%2, data['Maths'])), 
+      reduce(lambda x,y:x+y, data['Science']), sep='\n')
